@@ -12,7 +12,7 @@
         body {
             margin-left: 10%;
             margin-right: 10%;
-            text-align: left;
+            max-width: 42em;
         }
 
         h1 {
@@ -32,7 +32,6 @@
             margin-top: 0em;
         }
 
-        dl { text-align: left; }
         dt { margin-top: 1em; }
 
         div.figure {
@@ -48,14 +47,7 @@
             margin-left: 4em;
         }
 
-        ul {
-            text-align: left;
-            list-style-type: none;
-        }
-
-        ol {
-            text-align: left;
-        }
+        ul { list-style-type: none; }
     </style>
 
 </head>
@@ -63,21 +55,19 @@
 <body>
 
 <div align="center">
-<h1>Four-Space Visualization of 4D Objects</h1>
-<h2 style="margin-top: 0em;">
-    by <a href="mailto:steve@hollasch.net">Steven Richard Hollasch</a>
-</h2>
+    <h1>Four-Space Visualization of 4D Objects</h1>
+    <h2 style="margin-top: 0em;">
+        by <a href="mailto:steve@hollasch.net">Steven Richard Hollasch</a>
+    </h2>
 
-A Thesis Presented in Partial Fulfillment of the Requirements<br>for the
-Degree Master of Science
+    A Thesis Presented in Partial Fulfillment of the Requirements<br>for the Degree Master of Science
 
-<h2><a href="http://www.asu.edu/">Arizona State University</a>
-    <br>August 1991
-</h2>
-
+    <h2><a href="http://www.asu.edu/">Arizona State University</a>
+        <br>August 1991
+    </h2>
 </div>
 
-<p>Supervisory Committee:
+<p>Supervisory Committee:</p>
 <ul>
     <li>Dr. Thomas Foley
     <li>Dr. Gregory Nielson
@@ -85,6 +75,7 @@ Degree Master of Science
 </ul>
 
 <hr>
+
 <h2>Table of Contents</h2>
 
 <p>
@@ -179,7 +170,7 @@ The raytracing approach easily solves the hidden surface and shadowing
 problems of 4D objects, and yields an image in the form of a three-dimensional
 field of RGB values, which can be rendered with a variety of existing methods.
 The 4D raytracer also supports true four-dimensional lighting, reflections and
-refractions.
+refractions.</p>
 
 
 <h1>Acknowledgements</h1>
@@ -191,14 +182,14 @@ research, he has also been unfailing in helping me get the resources and
 information I needed to complete both this research and this paper. I would
 also like to acknowledge and thank Dr. Gregory Nielson and Dr. Gerald Farin
 for being on my thesis committee and offering their observations and
-suggestions.
+suggestions.</p>
 
 <p>Thanks are also due to Kevin Price for letting me use his Amiga and helping
 me produce animations of the raytrace data that aided my understanding of the
-process and nature of four-dimensional raytracing.
+process and nature of four-dimensional raytracing.</p>
 
 <p>Finally, I would like to thank my family for their patience, confidence,
-enthusiasm and financial support.
+enthusiasm and financial support.</p>
 
 
 <h1 align=center>List of Figures</h1>
@@ -293,7 +284,7 @@ three dimensions to location in three-space, and the remaining dimension to
 some scalar property at each three-dimensional location. This assignment is
 quite apt for a variety of four-dimensional data, such as tissue density in a
 region of a human body, pressure values in a volume of air, or temperature
-distribution throughout a mechanical object.
+distribution throughout a mechanical object.</p>
 
 <p>While there exist a number of methods to approach the visualization of
 three-dimensional scalar fields (<a href="ref.html#Chen85">[Chen 85]</a>,
@@ -303,12 +294,12 @@ three-dimensional scalar fields (<a href="ref.html#Chen85">[Chen 85]</a>,
 <a href="ref.html#Sabella88">[Sabella 88]</a>
 are good examples), there are few methods that are effective on true
 four-dimensional data, where the data do not represent a three-dimensional
-scalar field.
+scalar field.</p>
 
 <p>This paper approaches the problem of displaying 4D objects as physical
 models through two main approaches: wireframe methods and raytracing. Both
 of these methods employ true four-dimensional viewpoints and viewing
-parameters, and light (or depthcue) the rendered objects from four-space.
+parameters, and light (or depthcue) the rendered objects from four-space.</p>
 
 <h2 id="s1.1">1.1  Background</h2>
 
@@ -319,7 +310,7 @@ ourselves. This difficulty is best understood in imagining the plights of
 two-space creatures who try to comprehend our three-space world (see
 <a href="ref.html#Abbott52">[Abbott 52]</a> or
 <a href="ref.html#Dewdney84">[Dewdney 84]</a>
-for explorations of this idea).
+for explorations of this idea).</p>
 
 <p>The method we use to comprehend three-dimensional scenes is quite complex,
 since each eye is presented with only the two-dimensional projection of the
@@ -327,12 +318,12 @@ three-dimensional scene. There are several methods we employ to convert these
 2D projections to an imaginary 3D model. These methods include focusing (of
 limited help but useful when viewing with a single eye), parallax (deriving
 depth through binocular vision), application of object knowledge to understand
-different views, and motion to derive depth information.
+different views, and motion to derive depth information.</p>
 
 <p>These methods of visualizing 3D objects are very strong, and are usually
 quite accurate. When dealing with a single rendered 2D projection, however,
 the image becomes a bit more difficult to comprehend, because the viewer can
-no longer use focusing or parallax to extract information from the scene.
+no longer use focusing or parallax to extract information from the scene.</p>
 
 <p>Usually, however, rendered 2D projections are quite intelligible because
 these projections involve objects or structures familiar to the viewer, and
@@ -341,7 +332,7 @@ information. The main thing that aids our understanding of a scene when given
 only 2D projections is our experience and intuitive understanding of the 3D
 world. This additional understanding helps us to intuitively reconstruct the
 original 3D scene, and to accurately guess the portions for which we have no
-visual information.
+visual information.</p>
 
 <p>If we are deprived of this intuition and experience, then reconstructing
 the original scene from a projection is very difficult. This is what makes
@@ -351,7 +342,7 @@ screen image of 4D data as a projection of the projection of the scene. This
 further loss of information, coupled with our lack of intuitive understanding,
 demands that the 4D visualization methods provide additional information,
 usually in the form of motion, multiple views or other visual cues. These
-techniques will be presented in more detail later in this paper.
+techniques will be presented in more detail later in this paper.</p>
 
 <h2 id="s1.2">1.2  Previous Work</h2>
 
@@ -1614,7 +1605,7 @@ rotation.
     <br>Figure 4.7a:
     <br>4D Perspective and 3D Perspective Projection
     <br>4D Rotation of the 4-Cube
-</a>
+</a></div>
 
 <div class="figure" align="center"><a name="fig4.7b">
     <img src="images/fig4.7b.gif" alt="Figure 4.7b" width=430 height=375>
@@ -1705,7 +1696,6 @@ refer to <a href="ref.html#Chen90">[Chen 90]</a>.
     <br>A 4D Curve on a 4-Sphere with Poor Parameterization
 </a></div>
 
-
 <h1>Chapter 5
     <br>Raytracing in <nobr>Four Dimensions</nobr>
 </h1>
@@ -1719,7 +1709,7 @@ including simplicity of representation, speed of display, and ease of
 implementation. However, it cannot render solid objects, or objects that
 obscure one another. In addition, it cannot model other aspects of light
 propagation, such as shadows and reflections, which aid the user in
-understanding a given scene.
+understanding a given scene.</p>
 
 <p>Other rendering techniques exist that solve the hidden surface problem and
 shadows by representing the objects with a tessellated mesh of polygons.
@@ -1731,7 +1721,7 @@ polygons, the four-dimensional counterpart would have to deal with
 tessellating solids; thus, it would also have to properly handle intersecting
 solids with hidden volumes and solids that partially obscure one another.
 This is at best a difficult task in three-space; the four-space extension
-would be even more complex.
+would be even more complex.</p>
 
 <p>For these reasons, the raytracing algorithm was chosen to
 &ldquo;realistically&rdquo; render four-space scenes. Raytracing solves
@@ -1741,19 +1731,21 @@ restricted to rendering polygonal meshes; it can handle any object that can be
 <dfn>interrogated</dfn> to find the intersection point of a given ray with the
 surface of the object. This property is especially nice for rendering
 four-dimensional objects, since many N-dimensional objects can be easily
-described with implicit equations.
+described with implicit equations.</p>
 
 <p>Other benefits of raytracing extend quite easily to 4D. As in the 3D case,
 4D raytracing handles simple shadows merely by checking to see which objects
 obscure each light source. Reflections and refractions are also easily
 generalized, particularly since the algorithms used to determine refracted and
-reflected rays use equivalent vector arithmetic.
+reflected rays use equivalent vector arithmetic.</p>
 
-<div class="figure" align="center"><a name="fig5.1">
-    <img src="images/fig5.1.gif" alt="Figure 5.1" width=450 height=225>
-    <br>Figure 5.1
-    <br>A 2x2x2 4D Raytrace Grid
-</a></div>
+<div class="figure" align="center">
+    <a name="fig5.1">
+        <img src="images/fig5.1.gif" alt="Figure 5.1" width=450 height=225>
+        <br>Figure 5.1
+        <br>A 2x2x2 4D Raytrace Grid
+    </a>
+</div>
 
 <p>The main loop in the raytracing algorithm shoots rays from the viewpoint
 through a grid into the scene space. The grid is constructed so that each
@@ -1762,7 +1754,7 @@ illustration of a 2x2x2 ray grid). As a ray is &ldquo;fired&rdquo; from the
 viewpoint through the grid, it gathers light information by back-propagation.
 In this way raytracing approximates the light rays that scatter throughout the
 scene and enter the eye by tracing the rays back from the viewpoint to the
-light sources.
+light sources.</p>
 
 <p>The recursive nature of raytracing, coupled with the fact that every voxel
 is sampled, makes raytracing very time consuming. Fortunately, extending the
@@ -1775,43 +1767,40 @@ with a three-space triangle. This increase of complexity does not necessarily
 occur with all higher-order object intersections, though. The hypersphere,
 for example, can be intersected with essentially the same algorithm as for the
 three-sphere (although vector and point operations must handle an extra
-coordinate).
+coordinate).</p>
 
 
 
 <h2 id="s5.2">5.2 Generating the Four-Dimensional Ray Grid</h2>
 
-<p class="noindent">
-The ray grid must be constructed so that each point on the grid corresponds to
-each pixel for 3D raytracing or voxel (volume element) for 4D raytracing. In
-four-dimensional raytracing, the grid is a three-dimensional parallelepiped
-spanned by three orthogonal vectors. Note that although in
-<a href="#fig5.1">figure 5.1</a> it
-seems that a scene ray would pass through other voxels as it intersects each
-voxel center, scene rays do not lie in the same three-space (or hyperplane) as
-the ray grid. As a result, each scene ray intersects the ray grid only at the
-voxel centers.
+<p class="noindent"> The ray grid must be constructed so that each point on the grid corresponds to
+each pixel for 3D raytracing or voxel (volume element) for 4D raytracing. In four-dimensional
+raytracing, the grid is a three-dimensional parallelepiped spanned by three orthogonal vectors. Note
+that although in <a href="#fig5.1">figure 5.1</a> it seems that a scene ray would pass through other
+voxels as it intersects each voxel center, scene rays do not lie in the same three-space (or
+hyperplane) as the ray grid. As a result, each scene ray intersects the ray grid only at the voxel
+centers.</p>
 
 <p>The ray grid is constructed from the viewing parameters presented in
 <a href="chapter3.html#s3.2">section 3.2</a>. These viewing parameters are the
-same as the viewing parameters used for the 4D wireframe viewer.
+same as the viewing parameters used for the 4D wireframe viewer.</p>
 
 <p>The viewpoint is the point of origin for the scene rays, so it must be
 outside of the ray grid. Since the to-point is the point of interest, it
-should be centered in the 4D ray grid.
+should be centered in the 4D ray grid.</p>
 
 <p>Now that we have the center of the ray grid, we need to establish the basis
 vectors of this grid. Once we do that, we can index a particular voxel in the
-grid for the generation of scene rays.
+grid for the generation of scene rays.</p>
 
 <p>The up-vector and over-vector are used to form two of the grid basis
 vectors (after proper scaling). Since the line of sight must be perpendicular
 to the ray grid, we can generate the third basis vector by forming the
 four-dimensional cross product of the line of sight with the up-vector and
 over-vector. Note that in four-space, a ray can pass through any point within
-the cube without intersecting any other point.
+the cube without intersecting any other point.</p>
 
-<p>The grid basis vectors are computed as follows:
+<p>The grid basis vectors are computed as follows:</p>
 
 <pre>
                From - To
@@ -1829,12 +1818,12 @@ the cube without intersecting any other point.
         Bx = cross4 (By, Bz, S)
 </pre>
 
-At this point, S is the unit line-of-sight vector, and Bx, By &amp; Bz are the
+<p>At this point, S is the unit line-of-sight vector, and Bx, By &amp; Bz are the
 unit basis vectors for the ray grid. What we need to do now is to to scale
 these vectors. There are two additional sets of parameters that govern the
 construction of the ray grid. These are the the number of voxels along each
 axis of the grid (the resolution of the ray grid), and the shape of each voxel
-(the aspect ratios). In addition, we need to incorporate the viewing angle.
+(the aspect ratios). In addition, we need to incorporate the viewing angle.</p>
 
 <p>The resolution of the grid cube is given by the parameters Rx, Ry and Rz,
 which specify the number of voxels along the width, height and depth of the
@@ -1842,22 +1831,22 @@ cube, respectively. The aspect ratio of each voxel is given by the parameters
 Ax, Ay and Az. These parameters specify the width, height and depth of each
 voxel in arbitrary units (these numbers are used only in the ratio). For
 example, an aspect ratio of 1:4:9 specifies a voxel that is four times as high
-as it is wide, and that is 4/9ths as high as it is deep.
+as it is wide, and that is 4/9ths as high as it is deep.</p>
 
 <p>The ray grid is centered at the to-point; we use the
 viewing angle to determine the ray-grid size. As mentioned
 earlier, the viewing angle corresponds to the X axis. The
 other axes are sized according to the resolution and aspect
 ratios. Determining the proper scale of the grid X axis is
-easily done from the viewing angle
+easily done from the viewing angle</p>
 
 <pre>
         Lx = 2 ||From-To|| tan(theta4/2)
 </pre>
 
-where theta4 is the 4D viewing angle, and Lx is the width of the ray grid.
+<p>where theta4 is the 4D viewing angle, and Lx is the width of the ray grid.
 The other dimensions of the ray grid are determined by Lx, the aspect ratios,
-and the resolutions:
+and the resolutions:</p>
 
 <pre>
                 Ry Ay                    Rz Az
@@ -1865,16 +1854,16 @@ and the resolutions:
                 Rx Ax                    Rx Ax
 </pre>
 
-Thus, Lx, Ly and Lz are the lengths of each edge of the ray grid, and the grid
-basis vectors are scaled with these lengths to yield
+<p>Thus, Lx, Ly and Lz are the lengths of each edge of the ray grid, and the grid
+basis vectors are scaled with these lengths to yield</p>
 
 <pre>
         Gx = Lx Bx,  Gy = Ly By, and  Gz = Lz Bz.
 </pre>
 
-The main ray loop will start at a corner of the ray grid and scan in X, Y and
+<p>The main ray loop will start at a corner of the ray grid and scan in X, Y and
 Z order, respectively. The origin of the grid (each basis vector zero) is
-given by
+given by</p>
 
 <pre>
                  Gx + Gy + Gz
@@ -1882,9 +1871,9 @@ given by
                       2
 </pre>
 
-The incremental grid vectors are used to move from one grid voxel to another.
+<p>The incremental grid vectors are used to move from one grid voxel to another.
 They are computed by dividing the grid-length vectors by the respective
-resolution:
+resolution:</p>
 
 <pre>
              Gx        Gy        Gz
@@ -1892,8 +1881,8 @@ resolution:
              Rx        Ry        Rz
 </pre>
 
-Finally, the grid origin is offset by half a voxel, in order that the voxel
-centers are sampled.
+<p>Finally, the grid origin is offset by half a voxel, in order that the voxel
+centers are sampled.</p>
 
 <pre>
                 Dx + Dy + Dz
@@ -1901,7 +1890,7 @@ centers are sampled.
                      2
 </pre>
 
-The main raytracing procedure looks like this:
+<p>The main raytracing procedure looks like this:</p>
 
 <pre>
     Vector4 Dx,Dy,Dz;   // Grid-Traversal Vectors
