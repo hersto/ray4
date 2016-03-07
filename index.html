@@ -566,8 +566,8 @@ is</p>
 <p class="noindent"> which is the three-dimensional cross product. Using this idea, we'll form the
 analogous 4x4 matrix, and see if it meets the four cross product properties listed above:</p>
 
-<pre>
-<a name="2.1a">[2.1a]</a>
+<pre id="2.1a">
+[2.1a]
 
                     +-           -+
                     | i  j  k  l  |
@@ -579,8 +579,8 @@ analogous 4x4 matrix, and see if it meets the four cross product properties list
 
 <p class="noindent">The determinant of this matrix is</p>
 
-<pre>
-<a name="2.1b">[2.1b]</a>
+<pre id="2.1b">
+[2.1b]
 
          |U<sub>1</sub> U<sub>2</sub> U<sub>3</sub>|    |U<sub>0</sub> U<sub>2</sub> U<sub>3</sub>|    |U<sub>0</sub> U<sub>1</sub> U<sub>3</sub>|    |U<sub>0</sub> U<sub>1</sub> U<sub>2</sub>|
         i|V<sub>1</sub> V<sub>2</sub> V<sub>3</sub>| - j|V<sub>0</sub> V<sub>2</sub> V<sub>3</sub>| + k|V<sub>0</sub> V<sub>1</sub> V<sub>3</sub>| - l|V<sub>0</sub> V<sub>1</sub> V<sub>2</sub>|
@@ -687,10 +687,10 @@ rotations parallel to a 2D plane. This way of thinking about rotations is consis
 space (where there is only one such plane) and three space (where each rotation &ldquo;axis&rdquo;
 defines the rotation plane by coinciding with the normal vector to that plane).</p>
 
-<p><a name="rotmats">Once</a> this idea is established, it is easy to construct the basis 4D
-rotation matrices, since only two coordinates will change for a given rotation. There are six 4D
-basis rotation matrices, corresponding to the XY, YZ, ZX, XW, YW and ZW planes. These are given by
-(using angle T):</p>
+<p id="rotmats">Once this idea is established, it is easy to construct the basis 4D rotation
+matrices, since only two coordinates will change for a given rotation. There are six 4D basis
+rotation matrices, corresponding to the XY, YZ, ZX, XW, YW and ZW planes. These are given by (using
+angle T):</p>
 
 <pre>
      +-             -+     +-              -+     +-              -+
@@ -982,9 +982,9 @@ points that lie in the viewing frustum to the [-1,+1] x [-1,+1] rectangle.</p>
 <p>When using parallel projection, the equation of the data point's normalized screen coordinates
 (from eye coordinates) is given by the following pair of equations:</p>
 
-<pre>
-             P'x                P'y        <a name="e4.2a">[4.2a]</a>
-        Tx = ---    and    Ty = ---,
+<pre id="e4.2a">
+             P'x                P'y
+        Tx = ---    and    Ty = ---,       [4.2a]
              R3                 R3
 </pre>
 
@@ -1010,9 +1010,9 @@ is still preserved. Thus, T'x = P'x/P'z. To normalize T'x, note that the maximum
 T'x on the viewing plane occurs at T'x/T'z = tan(theta3/2), or T'x = tan(theta3/2). Thus, the
 equations for the normalized perspective projection T are given by</p>
 
-<pre>
-                P'x                               P'y           <a name="e4.2b">[4.2b]</a>
-    Tx = -----------------     and     Ty = -----------------
+<pre id="e4.2b">
+                P'x                               P'y
+    Tx = -----------------     and     Ty = -----------------        [4.2b]
          P'z tan(theta3/2)                  P'z tan(theta3/2)
 </pre>
 
@@ -1036,9 +1036,9 @@ viewport on the display device. This viewport is specified by the parameters</p>
 <p class="noindent">Given these viewport parameters, the mapping of the point T in the [-1,+1] x
 [-1,+1] rectangle to the display device viewport is given by the following equations:</p>
 
-<pre>
-                  Lx                         Ly          <a name="e4.2c">[4.2c]</a>
-        Sx = Cx + ---Tx,    <i>and</i>    Sy = Cy + ---Ty.
+<pre id="e4.2c">
+                  Lx                         Ly
+        Sx = Cx + ---Tx,    <i>and</i>    Sy = Cy + ---Ty.      [4.2c]
                    2                          2
 </pre>
 
@@ -1222,9 +1222,9 @@ projections are extensions of equations <a href="#e4.2a">4.2a</a> and <a href="#
 <p>The equations for parallel 4D to 3D projection are extended from equation
 <a href="#e4.2a">4.2a</a> by one coordinate:</p>
 
-<pre>
-             V'x          V'y              V'z        <a name="e4.3a">[4.3a]</a>
-        Qx = ---,    Qy = ---, and    Qz = ---,
+<pre id="e4.3a">
+             V'x          V'y              V'z
+        Qx = ---,    Qy = ---, and    Qz = ---,       [4.3a]
              R4           R4               R4
 </pre>
 
@@ -1248,10 +1248,10 @@ the four-dimensional line-of-sight).</p>
 derivation of the normalized 4D perspective projection follows the same reasoning as for the 3D
 normalized perspective projection. The equations are</p>
 
-<pre>
-    <a name="e4.3b">[4.3b]</a>
+<pre id="e4.3b">
+
                              V'x         V'y             V'z
-    T = tan(theta4/2), Qx = -----, Qy = -----, and Qz = -----.
+    T = tan(theta4/2), Qx = -----, Qy = -----, and Qz = -----.      [4.3b]
                             V'w T       V'w T           V'w T
 </pre>
 
@@ -1269,9 +1269,9 @@ that we mapped normalized 2D coordinates to the 2D viewport. Given the viewbox p
 <p class="noindent">we can map the normalized 3D coordinates to the viewbox with the following
 equations:</p>
 
-<pre>
-              Dx                 Dy                     Dz         <a name="e4.3c">[4.3c]</a>
-    Px = Bx + -- Qx,   Py = By + -- Qy, and   Pz = Bz + -- Qz.
+<pre id="e4.3c">
+              Dx                 Dy                     Dz
+    Px = Bx + -- Qx,   Py = By + -- Qy, and   Pz = Bz + -- Qz.     [4.3c]
               2                  2                      2
 </pre>
 
@@ -1972,7 +1972,7 @@ intersection point closest to the ray origin (since other intersection points wo
 the nearest one.)</p>
 
 
-<h3><a name="s5.6.1">5.6.1 Ray - Hypersphere Intersection</a></h3>
+<h3 id="s5.6.1">5.6.1 Ray - Hypersphere Intersection</h3>
 
 <p class="noindent"> The hypersphere is one of the simplest four-dimensional objects, just as the
 three-sphere is among the simplest objects in 3D raytracers. Like the three-sphere, the four-sphere
@@ -2152,9 +2152,9 @@ intersect the tetrahedron.</p>
 <p>Now compute the ray-hyperplane intersection with relation to the tetrahedron. The barycentric
 coordinates of the intersection point Q is given by the equation</p>
 
-<pre>
+<pre id="e5.5.2a">
         ____         _____        _____         _____
-        V0 Q = alpha V0 V1 + beta V0 V2 + gamma V0 V3.     <a name="e5.5.2a">[5.5.2a]</a>
+        V0 Q = alpha V0 V1 + beta V0 V2 + gamma V0 V3.     [5.5.2a]
 </pre>
 
 <p class="noindent"> The ray-hyperplane intersection point Q is inside the tetrahedron if
@@ -2163,8 +2163,8 @@ beta + gamma &lt;= 1</nobr>.</p>
 
 <p>Equation 5.5.2a can be rewritten as</p>
 
-<pre>
-    <a name="e5.5.2b">[5.5.2b]</a>
+<pre id="e5.5.2b">
+    [5.5.2b]
 
     +-      -+         +-       -+        +-       -+         +-       -+
     |Qx - V0x|         |V1x - V0x|        |V2x - V0x|         |V3x - V0x|
@@ -2189,8 +2189,8 @@ algorithm for an illustration of this.</p>
 <p>The hyperplane equation is then reduced to three coordinates, i, j, and k (X, Y &amp; W for the
 previous example), so equation <a href="#e5.5.2b">[5.5.2b]</a> is reduced to</p>
 
-<pre>
-    <a name="e5.5.2c">[5.5.2c]</a>
+<pre id="e5.5.2c">
+    [5.5.2c]
 
     +-      -+         +-       -+        +-       -+         +-       -+
     |Qi - V0i|         |V1i - V0i|        |V2i - V0i|         |V3i - V0i|
@@ -2501,116 +2501,117 @@ solve these. See <a href="#Brisson78">[Brisson 78]</a> for an example of 4D ster
 
 <dl>
 
-    <dt><a name="Abbott52">Abbott 52</a></dt>
+    <dt id="Abbott52">Abbott 52</dt>
     <dd>Edwin A. Abbott, <cite>Flatland</cite>, Dover Publications, Inc., New York NY, 1952.</dd>
 
-    <dt><a name="Banchoff90">Banchoff 90</a></dt>
+    <dt id="Banchoff90">Banchoff 90</dt>
     <dd>Thomas F. Banchoff, <cite>Beyond the Third Dimension</cite>, Scientific American Library,
         New York NY, 1990.</dd>
 
-    <dt><a name="Barnhill84">Barnhill 84</a>
+    <dt id="Barnhill84">Barnhill 84</dt>
     <dd>R. E. Barnhill and F. F. Little,
         &ldquo;Three&ndash; and Four&ndash;Dimensional Surfaces,&rdquo;
         <cite>The Rocky Mountain Journal of Mathematics</cite> 14(1),
-        Winter 1984, pp 77-102.
+        Winter 1984, pp 77-102.</dd>
 
-    <dt><a name="Brisson78">Brisson 78</a>
+    <dt id="Brisson78">Brisson 78</dt>
     <dd>edited by David W. Brisson,
         &ldquo;Visual Comprehension of <i>n</i>-Dimensions,&rdquo;
         <cite>Hypergraphics: Visualizing Complex Relationships in Art,
         Science &amp; Technology</cite>,
-        Westview Press, Boulder CO, 1978, pp 109-146.
+        Westview Press, Boulder CO, 1978, pp 109-146.</dd>
 
-    <dt><a name="Carey87">Carey 87</a>
+    <dt id="Carey87">Carey 87</dt>
     <dd>Scott A. Carey, Robert P. Burton, and Douglas M. Campbell,
         &ldquo;Shades of a Higher Dimension,&rdquo;
         <cite>Computer Graphics World</cite>,
-        October 1987, pp 93-94.
+        October 1987, pp 93-94.</dd>
 
-    <dt><a name="Chen85">Chen 85</a>
+    <dt id="Chen85">Chen 85</dt>
     <dd>L. Chen, G. Herman, R. Reynolds, J. Udupa,
         &ldquo;Surface Shading in the Cuberille Environment,&rdquo;
         <cite>IEEE Computer Graphics and Applications</cite> 5(12),
-        December 1985, pp 33-43.
+        December 1985, pp 33-43.</dd>
 
-    <dt><a name="Chen90">Chen 90</a>
+    <dt id="Chen90">Chen 90</dt>
     <dd>Chao-Chi Chen,
         &ldquo;Interpolation of Orientation Matrices Using Sphere Splines in Computer
         Animation,&rdquo;
         Master's Thesis, Computer Science Department, Arizona State University,
-        December 1990.
+        December 1990.</dd>
 
-    <dt><a name="Dewdney84">Dewdney 84</a>
+    <dt id="Dewdney84">Dewdney 84</dt>
     <dd>A. K. Dewdney,
         <cite>The Planiverse: Computer Contact with a Two-Dimensional World</cite>,
-        Poseidon Press, New York NY, 1984.
+        Poseidon Press, New York NY, 1984.</dd>
 
-    <dt><a name="Dewdney86">Dewdney 86</a>
+    <dt id="Dewdney86">Dewdney 86</dt>
     <dd>A. K. Dewdney,
-        &ldquo;Computer Recreations,&rdquo; <cite>Scientific American</cite>, April 1986, pp 14-23.
+        &ldquo;Computer Recreations,&rdquo; <cite>Scientific American</cite>,
+        April 1986, pp 14-23.</dd>
 
-    <dt><a name="Drebin88">Drebin 88</a>
+    <dt id="Drebin88">Drebin 88</dt>
     <dd>Robert Drebin, Loren Carpenter, Pat Hanrahan,
         &ldquo;Volume Rendering,&rdquo;
-        <cite>Computer Graphics</cite> 22(4), August 1988, pp 65-74.
+        <cite>Computer Graphics</cite> 22(4), August 1988, pp 65-74.</dd>
 
-    <dt><a name="Farin88">Farin 88</a>
+    <dt id="Farin88">Farin 88</dt>
     <dd>Gerald Farin,
         <cite>Curves and Surfaces for Computer Aided Geometric Design</cite>,
-        Academic Press, Inc., San Diego CA, 1988, pp 19,238.
+        Academic Press, Inc., San Diego CA, 1988, pp 19,238.</dd>
 
-    <dt><a name="Foley87">Foley 87</a>
+    <dt id="Foley87">Foley 87</dt>
     <dd>Thomas A. Foley, Gregory M. Nielson,
         &ldquo;Practical Techniques for Producing 3D Graphical Images,&rdquo;
-        <cite>VMEbus Systems</cite>,  November-December 1987, pp 65-73.
+        <cite>VMEbus Systems</cite>,  November-December 1987, pp 65-73.</dd>
 
-    <dt><a name="Frieder85">Frieder 85</a>
+    <dt id="Frieder85">Frieder 85</dt>
     <dd>G. Frieder, D. Gordon, R. Reynolds,
         &ldquo;Back-to-Front Display of Voxel-Based Objects,&rdquo;
-        <cite>IEEE Computer Graphics and Applications</cite> 5(1), January 1985, pp 52-60.
+        <cite>IEEE Computer Graphics and Applications</cite> 5(1), January 1985, pp 52-60.</dd>
 
-    <dt><a name="Glassner90">Glassner 90</a>
+    <dt id="Glassner90">Glassner 90</dt>
     <dd>Andrew Glassner,
-        <cite>Graphics Gems</cite>, Academic Press, Inc., San Diego CA, 1990, pp 390-393.
+        <cite>Graphics Gems</cite>, Academic Press, Inc., San Diego CA, 1990, pp 390-393.</dd>
 
-    <dt><a name="Hall89">Hall 89</a>
+    <dt id="Hall89">Hall 89</dt>
     <dd>Roy Hall,
         <cite>Illumination and Color in Complex Generated Imagery</cite>,
-        Springer-Verlag, New York NY, 1989, p 153.
+        Springer-Verlag, New York NY, 1989, p 153.</dd>
 
-    <dt><a name="Hill90">Hill 90</a>
+    <dt id="Hill90">Hill 90</dt>
     <dd>Francis S. Hill, Jr.,
-        <cite>Computer Graphics</cite>, Macmillan Publishing Co., New York NY, 1990.
+        <cite>Computer Graphics</cite>, Macmillan Publishing Co., New York NY, 1990.</dd>
 
-    <dt><a name="Kajiya84">Kajiya 84</a>
+    <dt id="Kajiya84">Kajiya 84</dt>
     <dd>James Kajiya, Brian Von Herzen,
         &ldquo;Ray Tracing Volume Densities,&rdquo;
-        <cite>Computer Graphics</cite> 18(3), July 1984, pp 165-174.
+        <cite>Computer Graphics</cite> 18(3), July 1984, pp 165-174.</dd>
 
-    <dt><a name="Lorensen87">Lorensen 87</a>
+    <dt id="Lorensen87">Lorensen 87</dt>
     <dd>William Lorensen, Harvey Cline,
         &ldquo;Marching Cubes: A High Resolution 3D Surface Construction Algorithm,&rdquo;
-        <cite>Computer Graphics</cite> 21(4), July 1987, pp 163-169.
+        <cite>Computer Graphics</cite> 21(4), July 1987, pp 163-169.</dd>
 
-    <dt><a name="Noll67">Noll 67</a>
+    <dt id="Noll67">Noll 67</dt>
     <dd>Michael A. Noll,
         &ldquo;A Computer Technique for Displaying n-Dimensional Hyperobjects,&rdquo;
-        <cite>Communications of the ACM</cite> 10(8), August 1967, pp 469-473.
+        <cite>Communications of the ACM</cite> 10(8), August 1967, pp 469-473.</dd>
 
-    <dt><a name="Sabella88">Sabella 88</a>
+    <dt id="Sabella88">Sabella 88</dt>
     <dd>Paolo Sabella,
         &ldquo;A Rendering Algorithm for Visualizing 3D Scalar Fields,&rdquo;
-        <cite>Computer Graphics</cite> 22(4), August 1988, pp 51-55.
+        <cite>Computer Graphics</cite> 22(4), August 1988, pp 51-55.</dd>
 
-    <dt><a name="Steiner87">Steiner 87</a>
+    <dt id="Steiner87">Steiner 87</dt>
     <dd>K. Victor Steiner and Robert P. Burton,
         &ldquo;Hidden Volumes: The 4th Dimension,&rdquo;
-        <cite>Computer Graphics World</cite>, February 1987, pp 71-74.
+        <cite>Computer Graphics World</cite>, February 1987, pp 71-74.</dd>
 
-    <dt><a name="Whitted80">Whitted 80</a>
+    <dt id="Whitted80">Whitted 80</dt>
     <dd>Turner Whitted,
         &ldquo;An Improved Illumination Model for Shaded Display,&rdquo;
-        <cite>Communications of the ACM</cite> 23(6), June 1980, pp 343-349.
+        <cite>Communications of the ACM</cite> 23(6), June 1980, pp 343-349.</dd>
 
 </dl>
 
